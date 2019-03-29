@@ -47,80 +47,83 @@ public class Playfair_cipher {
         System.out.println("select a option you want \n1-incrip \n2-decrip");
         h = input.nextLine();
        
-        {////String chcking
-        int k=0;
-        int p=0;
-        for ( k = 0; k <w.length; k++) {
-            if (w[k].charAt(0) == (char)127) {
-            } else {
-               
-               if(k>0){
-                    if(A1.get(p-1).equals((Character.toString(w[k].charAt(0))))){
-                        A1.add("x");
-                        
-                       A1.add((Character.toString(w[k].charAt(0))));
-                       p+=2;
-                    }else{
-                        p++;
-                                        A1.add((Character.toString(w[k].charAt(0))));
-
-                    }
-                }else{
-                   p++;
-                A1.add((Character.toString(w[k].charAt(0))));    
-                }
-            }
-        }
-       
-               if(A1.size()%2!=0){
-                  A1.add("x");
-               }
-        
-                   }////String chcking
-            int u=0;
-          for (int i = 0; i < 25; i++) {
-            if(u<w1.length){
-            if(A2.contains(w1[u])){
-                i-=1;
-                u++;
-            }else{
-          A2.add((Character.toString(w1[u].charAt(0))));
-            u++;
-            }
-            }else{
-                char q=(char)97;
-          
-                for ( i = i; i < 25; i++) {
-             if(A2.contains(Character.toString(q))){
-                 q++;
-                i--;
-                
-            }else{
-                 if(Character.toString(q).equals("j") && A2.contains("i")){
-                     q++;
-                     i--;
-                 }
-                 else  if(Character.toString(q).equals("i") && A2.contains("j")){
-                     q++;
-                     i--;
-                 }
-          A2.add(Character.toString(q));
-            q++;
-            }       
-                }
-            }
-        }
-          
-//          System.out.println(A2.size());
-//        for (int i = 0; i < A2.size(); i++) {
-//        System.out.print(A2.get(i));
+//        {////String chcking
+//        int k=0;
+//        int p=0;
+//        for ( k = 0; k <w.length; k++) {
+//            if (w[k].charAt(0) == (char)127) {
+//            } else {
+//               
+//               if(k>0){
+//                    if(A1.get(p-1).equals((Character.toString(w[k].charAt(0))))){
+//                        A1.add("x");
+//                        
+//                       A1.add((Character.toString(w[k].charAt(0))));
+//                       p+=2;
+//                    }else{
+//                        p++;
+//                                        A1.add((Character.toString(w[k].charAt(0))));
+//
+//                    }
+//                }else{
+//                   p++;
+//                A1.add((Character.toString(w[k].charAt(0))));    
+//                }
+//            }
 //        }
-      
-          for (int i = 0; i < A1.size(); i++) {
-        System.out.print(A1.get(i));
-        }
+//       
+//               if(A1.size()%2!=0){
+//                  A1.add("x");
+//               }
+//        
+//                   }////String chcking
+//            int u=0;
+//          for (int i = 0; i < 25; i++) {
+//            if(u<w1.length){
+//            if(A2.contains(w1[u])){
+//                i-=1;
+//                u++;
+//            }else{
+//          A2.add((Character.toString(w1[u].charAt(0))));
+//            u++;
+//            }
+//            }else{
+//                char q=(char)97;
+//          
+//                for ( i = i; i < 25; i++) {
+//             if(A2.contains(Character.toString(q))){
+//                 q++;
+//                i--;
+//                
+//            }else{
+//                 if(Character.toString(q).equals("j") && A2.contains("i")){
+//                     q++;
+//                     i--;
+//                 }
+//                 else  if(Character.toString(q).equals("i") && A2.contains("j")){
+//                     q++;
+//                     i--;
+//                 }
+//          A2.add(Character.toString(q));
+//            q++;
+//            }       
+//                }
+//            }
+//        }
+//          
+////          System.out.println(A2.size());
+////        for (int i = 0; i < A2.size(); i++) {
+////        System.out.print(A2.get(i));
+////        }
+//      
+//          for (int i = 0; i < A1.size(); i++) {
+//        System.out.print(A1.get(i));
+//        }
 
+          
         INC_OR_DEC A = new INC_OR_DEC();
+        A.func(A1,A2,w,w1);
+        
         switch (h) {
             case "1":
                 System.out.println(A.Incrip(A1, A2));
