@@ -11,6 +11,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.*;  
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;  
+
+
 
 /**
  *
@@ -26,12 +31,15 @@ public class Playfair_cipher {
         ArrayList<String> A2 = new ArrayList<String>();
         
         
+        
    FileReader fr;
         String s = "C:\\Users\\dell\\Documents\\NetBeansProjects\\playfair_cipher\\src\\playfair_cipher\\Plaintext.txt";
         BufferedReader br = new BufferedReader(new FileReader(s));
         String h=br.readLine();
         String w[] = h.split("");
-
+        
+        
+        
         System.out.println("Input Key");
         Scanner input = new Scanner(System.in);
         h = input.nextLine();
@@ -39,23 +47,36 @@ public class Playfair_cipher {
         System.out.println("select a option you want \n1-incrip \n2-decrip");
         h = input.nextLine();
        
-        
+        {////String chcking
         int k=0;
-        for ( k = 0; k < w.length; k++) {
-            
+        int p=0;
+        for ( k = 0; k <w.length; k++) {
             if (w[k].charAt(0) == (char)127) {
             } else {
                
-                if(k>0 && A1.get(k-1).equals(Character.toString(w[k].charAt(0)))){
-                    A1.add("X");
+               if(k>0){
+                    if(A1.get(p-1).equals((Character.toString(w[k].charAt(0))))){
+                        A1.add("x");
+                        
+                       A1.add((Character.toString(w[k].charAt(0))));
+                       p+=2;
+                    }else{
+                        p++;
+                                        A1.add((Character.toString(w[k].charAt(0))));
+
+                    }
+                }else{
+                   p++;
+                A1.add((Character.toString(w[k].charAt(0))));    
                 }
-                
-                A1.add((Character.toString(w[k].charAt(0))));
             }
         }
-               
+       
+               if(A1.size()%2!=0){
+                  A1.add("x");
+               }
         
-
+                   }////String chcking
             int u=0;
           for (int i = 0; i < 25; i++) {
             if(u<w1.length){
@@ -95,7 +116,9 @@ public class Playfair_cipher {
 //        System.out.print(A2.get(i));
 //        }
       
-          
+          for (int i = 0; i < A1.size(); i++) {
+        System.out.print(A1.get(i));
+        }
 
         INC_OR_DEC A = new INC_OR_DEC();
         switch (h) {
