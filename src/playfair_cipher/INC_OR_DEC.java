@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 class INC_OR_DEC {
 
+    String arr[][]=new String[5][5];
+    
    String Incrip(ArrayList<String> A1, ArrayList<String> A2) {
        return "";
     }
@@ -60,7 +62,15 @@ class INC_OR_DEC {
             if(A2.contains(w1[u])){
                 i-=1;
                 u++;
-            }else{
+            }else if("i".equals(w1[u]) && A2.contains("j")){
+                i-=1;
+                u++;
+            }
+            else if("j".equals(w1[u]) && A2.contains("i")){
+                i-=1;
+                u++;
+            }
+            else{
           A2.add((Character.toString(w1[u].charAt(0))));
             u++;
             }
@@ -92,7 +102,22 @@ class INC_OR_DEC {
 //        for (int i = 0; i < A2.size(); i++) {
 //        System.out.print(A2.get(i));
 //        }
-      
+//     int u1=0;   
+//        for (int i = 0; i < 5; i++) {
+//            for (int j = 0; j < 5; j++) {
+//                arr[i][j]=A2.get(u1);
+//                u1++;
+//            }
+//        }
+//        
+//        for (int i = 0; i < 5; i++) {
+//            for (int j = 0; j < 5; j++) {
+//                System.out.print(arr[i][j]);
+//            }
+//            System.out.println();
+//        }
+//        
+//      
 //          for (int i = 0; i < A1.size(); i++) {
 //        System.out.print(A1.get(i));
 //        }
