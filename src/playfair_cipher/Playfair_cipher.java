@@ -57,7 +57,7 @@ public class Playfair_cipher {
                 System.out.println(A.Incrip(A1, A2));
                 break;
             case "2":
-                System.out.println(A.Decrip(A1, A2));
+                System.out.println(A.Incrip(A1, A2));
                 break;
             default:
                 System.out.println("wrong choise");
