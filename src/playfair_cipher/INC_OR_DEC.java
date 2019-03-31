@@ -33,13 +33,13 @@ class INC_OR_DEC {
           new1.add(arr[ind.get(i+1).a][0]);
 
      i+=2;         
+               }else  if((ind.get(i).b)+1>=4){
+          new1.add(arr[ind.get(i).a][0]);
+          new1.add(arr[ind.get(i+1).a][(ind.get(i+1).b)+1]);
+
+     i+=2;         
                }
-//         else      if((ind.get(i+1).a)+1>=4){
-//          new1.add(arr[ind.get(i).a][(ind.get(i).b)+1]);
-//          new1.add(arr[ind.get(i+1).a][(ind.get(i+1).b)+1]);
-//
-//     i+=2;         
-//               }
+//        
                else{
           new1.add(arr[ind.get(i).a][(ind.get(i).b)+1]);
           new1.add(arr[ind.get(i+1).a][(ind.get(i+1).b)+1]);
@@ -51,8 +51,17 @@ class INC_OR_DEC {
              new1.add(arr[(ind.get(i).a)+1][ind.get(i).b]);
           new1.add(arr[0][ind.get(i).b]);
 
+     i+=2;     
+     
+              }
+              else if((ind.get(i).a)+1>=4){
+             new1.add(arr[0][ind.get(i).b]);
+          new1.add(arr[(ind.get(i+1).a)+1][ind.get(i).b]);
+
      i+=2;        
-              }else{
+              }
+              
+              else{
           new1.add(arr[(ind.get(i).a)+1][ind.get(i).b]);
           new1.add(arr[(ind.get(i+1).a)+1][ind.get(i).b]);
 
