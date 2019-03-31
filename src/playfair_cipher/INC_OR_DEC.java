@@ -12,10 +12,23 @@ import java.util.ArrayList;
  * @author dell
  */
 class INC_OR_DEC {
-
+    index in;
+    ArrayList<index> ind=new ArrayList<>();
     String arr[][]=new String[5][5];
+    ArrayList<String> new1=new ArrayList()  ;
     
    String Incrip(ArrayList<String> A1, ArrayList<String> A2) {
+      
+       for (int i = 0; i < ind.size(); ) {
+     new1.add(arr[ind.get(i).a][ind.get(i+1).b]);
+     new1.add(arr[ind.get(i+1).a][ind.get(i).b]);
+
+     i+=2;
+       }
+       for (int i = 0; i < new1.size(); i++) {
+           
+       
+       System.out.print(new1.get(i));}
        return "";
     }
 
@@ -90,10 +103,11 @@ class INC_OR_DEC {
                  else  if(Character.toString(q).equals("i") && A2.contains("j")){
                      q++;
                      i--;
-                 }
+                 }else{
           A2.add(Character.toString(q));
             q++;
-            }       
+                 }
+             }       
                 }
             }
         }
@@ -102,14 +116,35 @@ class INC_OR_DEC {
 //        for (int i = 0; i < A2.size(); i++) {
 //        System.out.print(A2.get(i));
 //        }
-//     int u1=0;   
-//        for (int i = 0; i < 5; i++) {
-//            for (int j = 0; j < 5; j++) {
-//                arr[i][j]=A2.get(u1);
-//                u1++;
-//            }
-//        }
-//        
+     int u1=0;   
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                arr[i][j]=A2.get(u1);
+                u1++;
+            }
+        }
+        
+        
+          for (int k = 0; k < A1.size(); k++) {
+       for (int i = 0 ; i < 5; i++)
+    for(int j = 0 ; j < 5 ; j++)
+    {
+         if (  A1.get(k).equals(arr[i][j]))
+         {
+             in=new index(i,j);
+             ind.add(in);
+              break;
+         }
+    }
+       }
+       
+       
+       
+//       for (int i = 0; i < ind.size(); i++) {
+//           System.out.println(ind.get(i));
+//       }//index printing
+//   
+        
 //        for (int i = 0; i < 5; i++) {
 //            for (int j = 0; j < 5; j++) {
 //                System.out.print(arr[i][j]);
