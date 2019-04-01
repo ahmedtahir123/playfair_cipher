@@ -28,12 +28,12 @@ class INC_OR_DEC {
            }//if row same hai
            else if(ind.get(i).a==ind.get(i+1).a){
               
-               if((ind.get(i+1).b)+1>=4){
+               if((ind.get(i+1).b)+1>4){
           new1.add(arr[ind.get(i).a][(ind.get(i).b)+1]);
           new1.add(arr[ind.get(i+1).a][0]);
 
      i+=2;         
-               }else  if((ind.get(i).b)+1>=4){
+               }else  if((ind.get(i).b)+1>4){
           new1.add(arr[ind.get(i).a][0]);
           new1.add(arr[ind.get(i+1).a][(ind.get(i+1).b)+1]);
 
@@ -47,14 +47,14 @@ class INC_OR_DEC {
      i+=2;     }
            }//if coloum same hai
           else if(ind.get(i).b==ind.get(i+1).b){
-              if((ind.get(i+1).a)+1>=4){
+              if((ind.get(i+1).a)+1>4){
              new1.add(arr[(ind.get(i).a)+1][ind.get(i).b]);
           new1.add(arr[0][ind.get(i).b]);
 
      i+=2;     
      
               }
-              else if((ind.get(i).a)+1>=4){
+              else if((ind.get(i).a)+1>4){
              new1.add(arr[0][ind.get(i).b]);
           new1.add(arr[(ind.get(i+1).a)+1][ind.get(i).b]);
 
@@ -78,7 +78,61 @@ class INC_OR_DEC {
 
 
     String  Decrip(ArrayList<String> A1, ArrayList<String> A2) {
+       for (int i = 0; i < ind.size(); ) {
+           if(ind.get(i).a!=ind.get(i+1).a && ind.get(i).b!=ind.get(i+1).b){
+     new1.add(arr[ind.get(i).a][ind.get(i+1).b]);
+     new1.add(arr[ind.get(i+1).a][ind.get(i).b]);
+
+     i+=2;
+           }//if row same hai
+           else if(ind.get(i).a==ind.get(i+1).a){
+              
+               if((ind.get(i+1).b)-1<0){
+          new1.add(arr[ind.get(i).a][(ind.get(i).b)-1]);
+          new1.add(arr[ind.get(i+1).a][4]);
+
+     i+=2;         
+               }else  if((ind.get(i).b)-1<0){
+          new1.add(arr[ind.get(i).a][4]);
+          new1.add(arr[ind.get(i+1).a][(ind.get(i+1).b)-1]);
+
+     i+=2;         
+               }
+//        
+               else{
+          new1.add(arr[ind.get(i).a][(ind.get(i).b)-1]);
+          new1.add(arr[ind.get(i+1).a][(ind.get(i+1).b)-1]);
+
+     i+=2;     }
+           }//if coloum same hai
+          else if(ind.get(i).b==ind.get(i+1).b){
+              if((ind.get(i+1).a)-1<0){
+             new1.add(arr[(ind.get(i).a)-1][ind.get(i).b]);
+          new1.add(arr[4][ind.get(i).b]);
+
+     i+=2;     
+     
+              }
+              else if((ind.get(i).a)-1<0){
+             new1.add(arr[4][ind.get(i).b]);
+          new1.add(arr[(ind.get(i+1).a)-1][ind.get(i).b]);
+
+     i+=2;        
+              }
+              
+              else{
+          new1.add(arr[(ind.get(i).a)-1][ind.get(i).b]);
+          new1.add(arr[(ind.get(i+1).a)-1][ind.get(i).b]);
+
+     i+=2;     }
+           }
+       }
+       for (int i = 0; i < new1.size(); i++) {
+       System.out.print(new1.get(i));}
+   
+
        return "";
+
     }
     
     
@@ -190,12 +244,12 @@ class INC_OR_DEC {
 //       }//index printing
 //   
         
-//        for (int i = 0; i < 5; i++) {
-//            for (int j = 0; j < 5; j++) {
-//                System.out.print(arr[i][j]);
-//            }
-//            System.out.println();
-//        }
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(arr[i][j]);
+            }
+            System.out.println();
+        }
 //        
 //      
 //          for (int i = 0; i < A1.size(); i++) {
